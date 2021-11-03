@@ -6,22 +6,18 @@ import org.hibernate.query.Query;
 import java.io.Serializable;
 import java.util.List;
 
+import static it.webapp.SingletonSession.getSession;
+
 public class UserManager {
-    Session session;
-
-    public UserManager() {
-        session = HibernateFactory.getFactoryMysql().openSession();
-    }
-
     /**
      * Questo metodo accetta un oggetto di tipo Customer in input e lo salva sul database
      * @param user il customer da salvare
      * @return boolean true se l'oggetto è stato salvato correttamente
      * */
     public boolean saveUser(User user){
-        session.getTransaction().begin();
-        Serializable obj = session.save(user);
-        session.getTransaction().commit();
+        getSession().getTransaction().begin();
+        Serializable obj = getSession().save(user);
+        getSession().getTransaction().commit();
         if(obj != null){
             return true;
         } else{
@@ -34,7 +30,7 @@ public class UserManager {
      * @return List<Customer> lista di customer
      * */
     public List<User> getAllUsers(){
-        List<User> users = session.createQuery("from User", User.class).getResultList();
+        List<User> users = getSession().createQuery("from User", User.class).getResultList();
         return users;
     }
 
@@ -43,7 +39,7 @@ public class UserManager {
      * @return User user
      * */
     public User getUser(String username){
-        Query query = session.createQuery("FROM User u WHERE u.username=:username");
+        Query query = getSession().createQuery("FROM User u WHERE u.username=:username");
         query.setParameter("username", username);
         return (User) query.uniqueResult();
     }
