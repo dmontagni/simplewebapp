@@ -47,4 +47,20 @@ public class UserManager {
         return (User) query.uniqueResult();
     }
 
+    public Customer getUserInfo(Integer userId){
+        Query query = session.createQuery("FROM Customer u WHERE u.iduser_x=:iduser");
+        query.setParameter("iduser", userId);
+        return (Customer) query.uniqueResult();
+    }
+    public boolean saveUserDetails(Customer user){
+        session.getTransaction().begin();
+        Serializable obj = session.save(user);
+        session.getTransaction().commit();
+        if(obj != null){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
 }

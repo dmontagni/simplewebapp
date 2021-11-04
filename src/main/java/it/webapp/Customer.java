@@ -21,8 +21,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nome, String cognome, Date data_nascita, String telefono, String email, Integer iduser_x) {
-        this.idCustomer = idCustomer;
+    public Customer(String nome, String cognome, Date data_nascita, String telefono, String email, Integer iduser_x) {
         this.nome = nome;
         this.cognome = cognome;
         this.data_nascita = data_nascita;
@@ -33,7 +32,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "idcustomer", unique = true, nullable = false)
+    @Column(name = "idcustomer", nullable = false)
     public Integer getIdCustomer() {
         return idCustomer;
     }
@@ -88,6 +87,19 @@ public class Customer {
 
     public void setIduser_x(Integer iduser_x) {
         this.iduser_x = iduser_x;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "idCustomer=" + idCustomer +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", data_nascita=" + data_nascita +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", iduser_x=" + iduser_x +
+                '}';
     }
 }
 

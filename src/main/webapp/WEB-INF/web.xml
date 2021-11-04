@@ -31,4 +31,20 @@
     <url-pattern>/listUser</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>SearchUser</servlet-name>
+    <servlet-class>it.webapp.servlet.SearchUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchUser</servlet-name>
+    <url-pattern>/searchUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InsertUserDetails</servlet-name>
+    <servlet-class>it.webapp.servlet.InsertUserDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertUserDetails</servlet-name>
+    <url-pattern>/insertUserDetails</url-pattern>
+  </servlet-mapping>
 </web-app>
