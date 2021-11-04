@@ -22,5 +22,13 @@
     <servlet-name>InsertUser</servlet-name>
     <url-pattern>/insertUser</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ListUser</servlet-name>
+    <servlet-class>it.webapp.servlet.ListUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListUser</servlet-name>
+    <url-pattern>/listUser</url-pattern>
+  </servlet-mapping>
 
 </web-app>
