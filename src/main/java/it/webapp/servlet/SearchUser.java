@@ -24,21 +24,27 @@ public class SearchUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         User userFound = userManager.getUser(req.getParameter("username"));
-
-        Customer userDetails = userManager.getUserInfo(userFound.getIdUser());
-
         RequestDispatcher rd;
-        if(userDetails != null){
-            rd = req.getRequestDispatcher("searchUserTrovato.jsp");
-            req.setAttribute("nome", userDetails.getNome());
-            req.setAttribute("cognome", userDetails.getCognome());
-            req.setAttribute("data_nascita", userDetails.getData_nascita());
-            req.setAttribute("email", userDetails.getEmail());
-            req.setAttribute("telefono", userDetails.getTelefono());
-        } else {
+        try{
+            Customer userDetails = userManager.getUserInfo(userFound.getIdUser());
+
+            if(userDetails != null){
+                rd = req.getRequestDispatcher("searchUserTrovato.jsp");
+                req.setAttribute("username", userFound.getUsername());
+                req.setAttribute("nome", userDetails.getNome());
+                req.setAttribute("cognome", userDetails.getCognome());
+                req.setAttribute("data_nascita", userDetails.getData_nascita());
+                req.setAttribute("email", userDetails.getEmail());
+                req.setAttribute("telefono", userDetails.getTelefono());
+                rd.forward(req, resp);
+            }
+        } catch (Exception e){
             rd = req.getRequestDispatcher("searchUserFail.jsp");
+            rd.forward(req, resp);
         }
-        rd.forward(req, resp);
+
+
+
 
 
     }
