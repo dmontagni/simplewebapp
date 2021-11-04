@@ -25,13 +25,12 @@ public class InsertUserDetails extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        User user;
-        user = userManager.getUser(req.getParameter("username"));
+        User user = userManager.getUser(req.getParameter("username"));
 
         Customer userToSave = new Customer(req.getParameter("nome"), req.getParameter("cognome"),
                 Date.valueOf(LocalDate.parse(req.getParameter("data_nascita"),format)),
                 req.getParameter("email"),req.getParameter("email"),user.getIdUser());
-        System.out.println(userToSave);
+
         boolean userSaved = userManager.saveUserDetails(userToSave);
 
         RequestDispatcher rd;
