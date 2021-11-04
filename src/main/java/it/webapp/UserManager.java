@@ -44,4 +44,10 @@ public class UserManager {
         return (User) query.uniqueResult();
     }
 
+    public Customer getUserInfo(Integer userId){
+        Query query = getSession().createQuery("FROM Customer u WHERE u.iduser_x=:iduser");
+        query.setParameter("iduser", userId);
+        return (Customer) query.uniqueResult();
+    }
+
 }
