@@ -89,5 +89,18 @@ public class Customer {
     public void setIduser_x(Integer iduser_x) {
         this.iduser_x = iduser_x;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "idCustomer=" + idCustomer +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", data_nascita=" + data_nascita +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", iduser_x=" + iduser_x +
+                '}';
+    }
 }
 

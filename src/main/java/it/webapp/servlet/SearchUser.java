@@ -29,7 +29,7 @@ public class SearchUser extends HttpServlet {
 
         RequestDispatcher rd;
         if(userDetails != null){
-            rd = req.getRequestDispatcher("searchUserSuccess.jsp");
+            rd = req.getRequestDispatcher("searchUserTrovato.jsp");
             req.setAttribute("nome", userDetails.getNome());
             req.setAttribute("cognome", userDetails.getCognome());
             req.setAttribute("data_nascita", userDetails.getData_nascita());
