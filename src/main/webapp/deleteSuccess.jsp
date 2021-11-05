@@ -1,7 +1,7 @@
 <html>
 <body>
-    <h2>ERRORE SALVATAGGIO</h2>
-    <p>utente non salvato, riprovare</p>
+    <h2>UTENTE ELIMINATO</h2>
+    <p>Utente Eliminato con successo!</p>
     <a href="index.jsp">torna alla homepage</a>
 </body>
 </html>

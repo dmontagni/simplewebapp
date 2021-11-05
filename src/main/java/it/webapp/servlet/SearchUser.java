@@ -37,6 +37,9 @@ public class SearchUser extends HttpServlet {
                 req.setAttribute("email", userDetails.getEmail());
                 req.setAttribute("telefono", userDetails.getTelefono());
                 rd.forward(req, resp);
+            } else {
+                rd = req.getRequestDispatcher("searchUserFail.jsp");
+                rd.forward(req, resp);
             }
         } catch (Exception e){
             rd = req.getRequestDispatcher("searchUserFail.jsp");
