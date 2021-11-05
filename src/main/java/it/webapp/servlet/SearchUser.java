@@ -1,6 +1,6 @@
 package it.webapp.servlet;
 
-import it.webapp.Customer;
+
 import it.webapp.User;
 import it.webapp.UserManager;
 
@@ -23,18 +23,22 @@ public class SearchUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         User userFound = userManager.getUser(req.getParameter("username"));
+       
+        Integer id = userManager.getUserId(req.getParameter("username"));
+        
+        
         RequestDispatcher rd;
         try{
-            Customer userDetails = userManager.getUserInfo(userFound.getIdUser());
+           // User userDetails = userManager.getUserInfo(id);
 
-            if(userDetails != null){
+            if(userFound != null){
                 rd = req.getRequestDispatcher("searchUserTrovato.jsp");
                 req.setAttribute("username", userFound.getUsername());
-                req.setAttribute("nome", userDetails.getNome());
-                req.setAttribute("cognome", userDetails.getCognome());
-                req.setAttribute("data_nascita", userDetails.getData_nascita());
-                req.setAttribute("email", userDetails.getEmail());
-                req.setAttribute("telefono", userDetails.getTelefono());
+                req.setAttribute("nome", userFound.getNome());
+                req.setAttribute("cognome", userFound.getCognome());
+                req.setAttribute("data_nascita", userFound.getData_nascita());
+                req.setAttribute("email", userFound.getEmail());
+                req.setAttribute("telefono", userFound.getTelefono());
                 rd.forward(req, resp);
             } else {
                 rd = req.getRequestDispatcher("searchUserFail.jsp");

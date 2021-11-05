@@ -1,6 +1,6 @@
 package it.webapp.servlet;
 
-import it.webapp.Customer;
+
 import it.webapp.User;
 import it.webapp.UserManager;
 
@@ -26,12 +26,11 @@ public class InsertUserDetails extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         User user = userManager.getUser(req.getParameter("username"));
-
-        Customer userToSave = new Customer(req.getParameter("nome"), req.getParameter("cognome"),
-                Date.valueOf(LocalDate.parse(req.getParameter("data_nascita"),format)),
-                req.getParameter("telefono"),req.getParameter("email"),user.getIdUser());
-
-        boolean userSaved = userManager.saveUserDetails(userToSave);
+        
+        userManager.updateUser(userManager.getUserId(req.getParameter("username")),req.getParameter("nome"),req.getParameter("cognome"),Date.valueOf(LocalDate.parse(req.getParameter("data_nascita"),format)),req.getParameter("telefono"),req.getParameter("email"));
+      
+        
+        boolean userSaved = userManager.saveUserDetails(user);
 
         RequestDispatcher rd;
         if(userSaved){

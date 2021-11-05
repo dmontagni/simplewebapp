@@ -5,7 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+
+
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 
@@ -47,12 +50,14 @@ public class UserManager {
         return (User) query.uniqueResult();
     }
 
-    public Customer getUserInfo(Integer userId){
-        Query query = session.createQuery("FROM Customer u WHERE u.iduser_x=:iduser");
+    public User getUserInfo(Integer userId){
+        Query query = session.createQuery("FROM User u WHERE u.iduser=:iduser");
         query.setParameter("iduser", userId);
-        return (Customer) query.uniqueResult();
+        return (User) query.uniqueResult();
     }
-    public boolean saveUserDetails(Customer user){
+    
+    
+    public boolean saveUserDetails(User user){
         session.getTransaction().begin();
         Serializable obj = session.save(user);
         session.getTransaction().commit();
@@ -85,6 +90,27 @@ public class UserManager {
         session.getTransaction().commit();
         sessionFactory.close();
     }
+    
+    
+    public static void updateUser(int id, String nome,String  cognome, Date data, String telefono, String email) {
+		//Create session factory object
+	  SessionFactory sessionFactory = HibernateFactory.getFactoryMysql();
+	  //getting session object from session factory
+	  org.hibernate.Session session = sessionFactory.openSession();
+	  //getting transaction object from session object
+	  session.beginTransaction();
+	  
+	  User user = (User)session.get(User.class, id);
+	  user.setNome(nome);
+	  user.setCognome(cognome);
+	  user.setData_nascita(data);
+	  user.setTelefono(telefono);
+	  user.setEmail(email);
+	  System.out.println("Updated Successfully");
+	  session.getTransaction().commit();
+	  sessionFactory.close();
+ }
+    
 
     public boolean validate(String username) {
 

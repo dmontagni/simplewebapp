@@ -17,6 +17,5 @@
         <!-- Drop and re-create the database schema on startup
         <property name="hbm2ddl.auto">create</property>-->
         <mapping class="it.webapp.User" />
-        <mapping class="it.webapp.Customer" />
-    </session-factory>
+       </session-factory>
 </hibernate-configuration>
