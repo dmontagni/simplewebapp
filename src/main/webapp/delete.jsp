@@ -8,8 +8,6 @@
         </p>
         <input type="submit" value="SEARCH">
     </form>
-    
-    
     <h2>Cancella un utente</h2>
     <form action="deleteServlet" method="post">
         <p>
@@ -18,9 +16,7 @@
         </p>
         <input type="submit" value="DELETE">
     </form>
-    <a href="index.jsp">torna alla homepage</a>
-    
-    
+    <a href="result.jsp">HOMEPAGE</a>
     <p><a href="listUser"><input type="button" value="VISUALIZZA LISTA UTENTI" /></a></p>
 </body>
 </html>

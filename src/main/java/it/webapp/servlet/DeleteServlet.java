@@ -1,9 +1,8 @@
 package it.webapp.servlet;
 
 
-import it.webapp.Customer;
 import it.webapp.User;
-import it.webapp.DeleteUserManager;
+import it.webapp.UserManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,14 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 public class DeleteServlet extends HttpServlet {
-    DeleteUserManager userManager;
+    UserManager userManager;
 
     @Override
     public void init() throws ServletException {
-        userManager = new DeleteUserManager();
+        userManager = new UserManager();
     }
 
     

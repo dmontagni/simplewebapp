@@ -10,6 +10,6 @@
     <p>email: <b><%=request.getAttribute("email")%></b></p>
     ________________________________________________
     <p><a href="searchUser.jsp">torna alla ricerca</a></p>
-    <p><a href="index.jsp">torna alla homepage</a></p>
+    <p><a href="result.jsp">HOMEPAGE</a></p>
 </body>
 </html>

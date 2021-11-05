@@ -12,6 +12,6 @@
         </p>
         <input type="submit" value="SAVE">
     </form>
-    <a href="index.jsp">torna alla homepage</a>
+    <a href="result.jsp">HOMEPAGE</a>
 </body>
 </html>

@@ -8,6 +8,6 @@
         </p>
         <input type="submit" value="SEARCH">
     </form>
-    <a href="index.jsp">torna alla homepage</a>
+    <a href="result.jsp">HOMEPAGE</a>
 </body>
 </html>

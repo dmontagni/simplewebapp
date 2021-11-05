@@ -1,79 +1,70 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>MyServlet</servlet-name>
-    <servlet-class>it.webapp.servlet.MyServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MyServlet</servlet-name>
-    <url-pattern>/myServlet</url-pattern>
-  </servlet-mapping>
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>it.webapp.servlet.MyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/myServlet</url-pattern>
+    </servlet-mapping>
 
-  <servlet>
-    <servlet-name>InsertUser</servlet-name>
-    <servlet-class>it.webapp.servlet.InsertUser</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertUser</servlet-name>
-    <url-pattern>/insertUser</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>ListUser</servlet-name>
-    <servlet-class>it.webapp.servlet.ListUser</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListUser</servlet-name>
-    <url-pattern>/listUser</url-pattern>
-  </servlet-mapping>
+    <servlet>
+        <servlet-name>InsertUser</servlet-name>
+        <servlet-class>it.webapp.servlet.InsertUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertUser</servlet-name>
+        <url-pattern>/insertUser</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListUser</servlet-name>
+        <servlet-class>it.webapp.servlet.ListUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListUser</servlet-name>
+        <url-pattern>/listUser</url-pattern>
+    </servlet-mapping>
 
-  <servlet>
-    <servlet-name>SearchUser</servlet-name>
-    <servlet-class>it.webapp.servlet.SearchUser</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SearchUser</servlet-name>
-    <url-pattern>/searchUser</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>InsertUserDetails</servlet-name>
-    <servlet-class>it.webapp.servlet.InsertUserDetails</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>InsertUserDetails</servlet-name>
-    <url-pattern>/insertUserDetails</url-pattern>
-  </servlet-mapping>
-  
-          	<servlet>
-    <servlet-name>DeleteServlet</servlet-name>
-    <servlet-class>it.webapp.servlet.DeleteServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteServlet</servlet-name>
-    <url-pattern>/deleteServlet</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-    <servlet-name>DeleteServlet</servlet-name>
-    <servlet-class>it.webapp.servlet.DeleteServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteServlet</servlet-name>
-    <url-pattern>/delete/deleteServlet</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-    <servlet-name>ListUser</servlet-name>
-    <servlet-class>it.webapp.servlet.ListUser</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListUser</servlet-name>
-    <url-pattern>/delete/listUser</url-pattern>
-  </servlet-mapping>
-  
-  
+    <servlet>
+        <servlet-name>SearchUser</servlet-name>
+        <servlet-class>it.webapp.servlet.SearchUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchUser</servlet-name>
+        <url-pattern>/searchUser</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>InsertUserDetails</servlet-name>
+        <servlet-class>it.webapp.servlet.InsertUserDetails</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertUserDetails</servlet-name>
+        <url-pattern>/insertUserDetails</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>it.webapp.servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/delete/deleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListUser</servlet-name>
+        <servlet-class>it.webapp.servlet.ListUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListUser</servlet-name>
+        <url-pattern>/delete/listUser</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
