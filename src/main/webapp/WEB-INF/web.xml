@@ -54,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteServlet</servlet-name>
-        <url-pattern>/delete/deleteServlet</url-pattern>
+        <url-pattern>/deleteServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
