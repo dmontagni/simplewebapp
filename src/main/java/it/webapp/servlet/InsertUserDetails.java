@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -25,12 +26,14 @@ public class InsertUserDetails extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        SimpleDateFormat format2 = new SimpleDateFormat();
+        //java.util.Date data = new java.util.Date(format.format(req.getParameter("data_nascita")));
         User user = userManager.getUser(req.getParameter("username"));
         
-        userManager.updateUser(userManager.getUserId(req.getParameter("username")),req.getParameter("nome"),req.getParameter("cognome"),Date.valueOf(LocalDate.parse(req.getParameter("data_nascita"),format)),req.getParameter("telefono"),req.getParameter("email"));
-      
-        
-        boolean userSaved = userManager.saveUserDetails(user);
+        boolean userSaved = userManager.updateUser(userManager.getUserId(req.getParameter("username")),req.getParameter("nome"),req.getParameter("cognome"),
+        Date.valueOf(LocalDate.parse(req.getParameter("data_nascita"),format).plusDays(1)),req.getParameter("telefono"),req.getParameter("email"));
+
+
 
         RequestDispatcher rd;
         if(userSaved){

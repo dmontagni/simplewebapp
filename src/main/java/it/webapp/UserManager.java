@@ -92,7 +92,7 @@ public class UserManager {
     }
     
     
-    public static void updateUser(int id, String nome,String  cognome, Date data, String telefono, String email) {
+    public boolean  updateUser(int id, String nome,String  cognome, Date data, String telefono, String email) {
 		//Create session factory object
 	  SessionFactory sessionFactory = HibernateFactory.getFactoryMysql();
 	  //getting session object from session factory
@@ -107,8 +107,10 @@ public class UserManager {
 	  user.setTelefono(telefono);
 	  user.setEmail(email);
 	  System.out.println("Updated Successfully");
+      session.save(user);
 	  session.getTransaction().commit();
 	  sessionFactory.close();
+      return true;
  }
     
 

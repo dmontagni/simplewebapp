@@ -3,7 +3,7 @@
     <h2>aggiorna un utente</h2>
     <form action="insertUserDetails" method="post">
         <p>
-            <label for="username">Utente da aggiornare:</label><br>
+            <label for="username">Inserisci username da aggiornare:</label><br>
             <input type="text" name="username">
         </p>
         <p>
