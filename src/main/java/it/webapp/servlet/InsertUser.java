@@ -27,8 +27,8 @@ public class InsertUser extends HttpServlet {
 
         RequestDispatcher rd;
         if(userSaved){
-            rd = req.getRequestDispatcher("saveUserSuccess.jsp");
-            req.setAttribute("username", userToSave.getUsername());
+            rd = req.getRequestDispatcher("index.jsp");
+            //req.setAttribute("username", userToSave.getUsername());
         } else {
             rd = req.getRequestDispatcher("saveUserFail.jsp");
         }
